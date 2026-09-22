@@ -78,9 +78,47 @@ Logical event names are intentionally used instead of inventing SAP-specific eve
 7. **Cloud-first integration** — integration capabilities are separated from business applications where appropriate.
 8. **Evolution without consumer-wide redesign** — new consumers should be addable without changing the producer.
 
+## 5. Documentation
+
+The detailed solution documentation is organized by topic.
+
+### Architecture & Requirements
+
+* [Solution Architecture](docs/architecture.md) — target architecture, architectural roles, quality attributes and architecture boundaries.
+* [Business & Non-Functional Requirements](docs/business-requirements.md) — business requirements and NFRs.
+* [Integration Pattern](docs/integration-pattern.md) — event-driven publish/subscribe pattern and the role of SAP Integration Suite.
+* [Interface Design](docs/api-design.md) — event and consumer integration interface design considerations.
+* [Logical Mapping](docs/mapping.md) — logical mapping between event attributes and consumer usage.
+* [Event Contract](docs/event-contract.md) — logical event contract and contract governance principles.
+
+### Security, Resilience & Operations
+
+* [Security Architecture](docs/security.md) — security principles, trust boundaries and implementation considerations.
+* [Error Handling & Resilience](docs/error-handling.md) — failure categories, retry concepts, idempotency and dead-letter handling.
+* [Monitoring & Operations](docs/monitoring.md) — monitoring layers, correlation and operational KPIs.
+* [Deployment Strategy](docs/deployment-strategy.md) — environment separation, deployment sequence and production-readiness considerations.
+* [Test Strategy](docs/test-strategy.md) — component, integration, end-to-end, negative and recovery testing.
+
+### Architecture Decision Records
+
+Key architectural decisions are documented separately:
+
+* [ADR-001: Use an Event Backbone](docs/adr-001-event-broker.md) — decision to use an event broker / event mesh as the distribution backbone.
+* [ADR-002: Event-Driven over Point-to-Point](docs/adr-002-event-driven-over-point-to-point.md) — decision to prefer asynchronous event-driven integration where appropriate.
+* [ADR-003: Idempotent Consumers](docs/adr-003-idempotent-consumers.md) — requirement for idempotent consumer processing.
+* [ADR-004: Govern Event Contracts](docs/adr-004-event-contract-governance.md) — event contracts as governed integration interfaces.
+* [ADR-005: Consumer-Specific Transformation](docs/adr-005-consumer-specific-transformation.md) — keeping consumer-specific transformation in the integration layer.
+
+### Scope & Evidence
+
+* [Assumptions & Constraints](docs/assumptions-and-constraints.md) — assumptions, implementation dependencies and explicit architecture boundaries.
+* [SAP Mission Reference & Evidence Boundary](docs/mission-evidence.md) — distinction between SAP Mission source material and architectural extensions.
+* [Limitations & Future Improvements](docs/limitations-future-improvements.md) — current limitations and possible future extensions.
+
 ---
 
-## 5. Repository Structure
+
+## 6. Repository Structure
 
 ```text
 .
@@ -109,7 +147,7 @@ Logical event names are intentionally used instead of inventing SAP-specific eve
 
 ---
 
-## 6. Scope Boundary
+## 7. Scope Boundary
 
 This repository deliberately separates three levels:
 
@@ -138,7 +176,7 @@ The latter items require validation in the target SAP landscape.
 
 ---
 
-## 7. Reference
+## 8. Reference
 
 The project was inspired by an SAP Discovery Center mission on Event-Driven Warehouse and is intentionally expanded beyond the learning exercise into an architecture portfolio artifact.
 
